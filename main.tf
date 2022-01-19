@@ -20,9 +20,9 @@ data "aws_route_tables" "route_tables" {
 locals {
   entries = flatten([
     for route_table in data.aws_route_tables.route_tables.ids : [
-      for route in var.routes : {
-        route_table = route_table
-        route    = route
+      for cidr in var.cidrs : {
+        route_table_id = route_table
+        cidr    = cidr
       }
     ]
   ])
@@ -34,7 +34,7 @@ resource "aws_route" "routes" {
     for entry in local.entries : "${entry.route_table}-${entry.route}" => entry
   }
 
-  route_table_id            = each.value.route_table
-  destination_cidr_block    = each.value.route
+  route_table_id            = each.value.route_table_id
+  destination_cidr_block    = each.value.cidr
   transit_gateway_id        = var.tgw_id
 }

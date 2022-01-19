@@ -8,8 +8,8 @@ variable "tgw_id" {
   type = string
 }
 
-variable "routes" {
-  description = "routes to forward"
+variable "cidrs" {
+  description = "cidrs to forward"
   type    = list(string)
   default = []
 }
