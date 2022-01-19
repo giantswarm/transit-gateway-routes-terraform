@@ -16,14 +16,16 @@ provider "aws" {
   region  = "eu-west-1"
 }
 
-module "qq77k-routes" {
+module "anr21-routes" {
   source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
-  cluster_id = "qq77k"
+  # Giant Swarm Cluster ID
+  cluster_id = "anr21"
+  # TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
   routes = [
-      "10.1.13.0/24",
-      "10.1.12.0/24",
+      # CIDR of the destination VPC
+      "192.168.1.0/24"
   ]
 }
 ```
@@ -51,9 +53,9 @@ provider "aws" {
 module "qq77k-routes" {
   source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
-  #Cluster ID
+  #Giant Swarm Cluster ID
   cluster_id = "qq77k"
-  #TGW Id
+  #TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
   #VPC CIDRS of qq77k except the CNI CIDR
   routes = [
@@ -65,9 +67,9 @@ module "qq77k-routes" {
 module "tb79w-routes" {
   source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
-  #Cluster ID
+  #Giant Swarm Cluster ID
   cluster_id = "tb79w"
-  #TGW Id
+  #TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
   #VPC CIDRS of qq77k except the CNI CIDR
   routes = [
