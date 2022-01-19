@@ -31,7 +31,7 @@ locals {
 #Create all the route table entries
 resource "aws_route" "routes" {
   for_each = {
-    for entry in local.entries : "${entry.route_table}-${entry.route}" => entry
+    for entry in local.entries : "${entry.route_table_id}-${entry.cidr}" => entry
   }
 
   route_table_id            = each.value.route_table_id

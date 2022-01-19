@@ -23,7 +23,7 @@ module "anr21-routes" {
   cluster_id = "anr21"
   # TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
-  routes = [
+  cidrs = [
       # CIDR of the destination VPC
       "192.168.1.0/24"
   ]
@@ -58,7 +58,7 @@ module "qq77k-routes" {
   #TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
   #VPC CIDRS of qq77k except the CNI CIDR
-  routes = [
+  cidrs = [
       "10.1.13.0/24",
       "10.1.12.0/24",
   ]
@@ -72,7 +72,7 @@ module "tb79w-routes" {
   #TGW ID
   tgw_id = "tgw-06b8782d6cc0568ac"
   #VPC CIDRS of qq77k except the CNI CIDR
-  routes = [
+  cidrs = [
       "10.1.11.0/24",
       "10.1.18.0/24",
   ]
