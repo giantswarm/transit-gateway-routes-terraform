@@ -1,7 +1,9 @@
 # What is this terraform module
 This module will create route table entries to forward traffic from a cluster to a transit gateway.
 
-Developed and tested with Terraform v1.1.2
+Developed and tested with Terraform v1.1.2 and GS release 16.X, does not work CAPI releases.
+
+Disclaimer: this is not actively maintained.
 
 # How to use the module
 Create a main.tf file with the following contents:
