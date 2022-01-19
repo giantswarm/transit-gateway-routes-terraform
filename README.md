@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 module "qq77k-routes" {
-  source = "../giantswarm-routes"
+  source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
   cluster_id = "qq77k"
   tgw_id = "tgw-06b8782d6cc0568ac"
@@ -49,7 +49,7 @@ provider "aws" {
 }
 
 module "qq77k-routes" {
-  source = "../giantswarm-routes"
+  source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
   #Cluster ID
   cluster_id = "qq77k"
@@ -63,7 +63,7 @@ module "qq77k-routes" {
 }
 
 module "tb79w-routes" {
-  source = "../giantswarm-routes"
+  source = "github.com/giantswarm/transit-gateway-routes-terraform"
 
   #Cluster ID
   cluster_id = "tb79w"
