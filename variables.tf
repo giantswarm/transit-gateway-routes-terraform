@@ -11,4 +11,9 @@ variable "tgw_id" {
 variable "cidrs" {
   description = "cidrs to forward"
   type    = list(string)
+
+  validation {
+    condition     = length(var.cidrs) >=1
+    error_message = "You must set at least one CIDR to be added"
+  }
 }
