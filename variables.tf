@@ -11,5 +11,4 @@ variable "tgw_id" {
 variable "cidrs" {
   description = "cidrs to forward"
   type    = list(string)
-  default = []
 }
